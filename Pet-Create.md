@@ -1,57 +1,73 @@
-#Objective
+# Pet Creation
+
+## Objective
 
 In this application, we will be learning how to create a new Pet.
 
-#Introduction
+## Introduction
 
 This part of the application is make sure that a new pet can be created by using the application with all the required parameters.
 
-#Table of Contents
+## Table of Contents
+* [Definitions](#definitions)
+	* [Pet-Create Document](#pet-create-document)
+	* [HTTP Status Codes](#http-status-codes)
+* [Specification](#specification)
+	* [Format](#format)
+	* [Document Structure](#document-structure)
+	* [Data Types](#data-types)
+	* [Schema](#schema)
+		* [Pet Create Object](#pet-create-object)
+		* [Status Object](#status-object)
+		* [Security Requirement Object](#security-requirement-object)
 
-*Definitions
+## Definitions
 
-*Specification
-	
+### Pet-Create Document
 
-##Definitions
+A document that defines and or describes the creation of pets in the system. This definition uses and conforms to the requirement specification  
 
-#Specification
+### HTTP Status Codes
 
-##Format
+The HTTP Status Codes are used to indicate the status of the executed operation. The available status codes are defined by tech-writer-take-home assignment and are listed in the Coding Best Practices.
 
--	A pet creation document  with file format JSON
+## Specification
+
+### Format
+
+-	A pet creation document with file format JSON
 
 ## Document Structure
 
 The structure of this document can be used as a whole to learn the pet creation module of the application.
 
-##Data Types
-|  Field Name  |    Type    |   Values   |					Descrption					|
+## Data Types
+|  Common Name  |    type    |   format   |					Comments					|
 | --- | --- | --- | ----- |
-| category | Object | An object that records parametric values |
-| name | String | NA | A string to store a category name of a pet |
-| prop1 | String | NA | A string to describe a sub category for a pet |
-| name | String | NA | A string to record name of a pet |
-| photoUrls | String | A string value for a link to the photo of a pet|
-| status | String | A string to show the booking status of a pet|
-| petType | String | A string to show the type of a pet, e.g. cat, dog, fish and rabbit|
+| string | String | NA | Information received in the form of text |
 
 
-# Pet Create Object
+## Schema
+
+In the following description, if a field is not explicitly mentioned as **REQUIRED**, it can be considered as OPTIONAL. 
+
+### Pet Create Object
 
 
-##Fixed Fields
-|  Field Name  |    Type    |   Values   |					Descrption					|
+## Fixed Fields
+|  Field Name  |    Type    |   Values   |					Description					|
 | --- | --- | --- | ----- |
-| category | Object | An object that records parametric values |
-| name | String | NA | A string to store a category name of a pet |
+| category | Object | NA | An object that records parametric values |
+| name | String | NA | **REQUIRED.** A string to store a category name of a pet |
 | prop1 | String | NA | A string to describe a sub category for a pet |
-| name | String | NA | A string to record name of a pet |
-| photoUrls | String | A string value for a link to the photo of a pet|
-| status | String | A string to show the booking status of a pet|
-| petType | String | A string to show the type of a pet, e.g. cat, dog, fish and rabbit|
+| name | String | NA | **REQUIRED.** A string to record name of a pet |
+| photoUrls | String | NA | A string value for a link to the photo of a pet|
+| tags | Object | NA | An object to tag a pet|
+| name | String | NA | **REQUIRED.** A string to register a tag name of a pet|
+| status | String | NA | A string to show the booking/availability status of a pet|
+| petType | String | NA | A string to show the type of a pet, e.g. cat, dog, fish and rabbit|
 
-##Pet Create Object Example
+## Pet Create Object Example
 
 ```
 	{
@@ -97,16 +113,16 @@ The structure of this document can be used as a whole to learn the pet creation 
 ```
 
 
-##Returns Object
+## Status Object
 
-A description of the returned result with the correct error code or successful operation code
+A description of the returned result status with the correct error code or successful operation code
 
-| Code | Decription |
+| Code | Description |
 | --- | --- |
 | 200 | New pet created! |
 | 405 | Invalid Input! |
 
-##Security Requirement Object
+## Security Requirement Object
 
 This specifies the security schemes to execute this operation. Security Requirement Object specifies that bearer authorization needs to be implemented to access or modify records of pets in the database.
 
@@ -129,7 +145,7 @@ bearer_auth:
 
 ```
 
-| Authorization | Decription |
+| Authorization | Description |
 | --- | --- |
 | write | Access the pets database to edit or modify records |
 | read | Access the pets database to access all records |
