@@ -35,26 +35,26 @@ The HTTP Status Codes are used to indicate the status of the executed operation.
 
 ### Format
 
--	A pet creation document with file format JSON
+-	A pet creation document, which shows you how to create a pet using the application. The records are stored in a database in json format.
 
-## Document Structure
+### Document Structure
 
 The structure of this document can be used as a whole to learn the pet creation module of the application.
 
-## Data Types
+### Data Types
 |  Common Name  |    type    |   format   |					Comments					|
 | --- | --- | --- | ----- |
 | string | String | NA | Information received in the form of text |
 
 
-## Schema
+### Schema
 
 In the following description, if a field is not explicitly mentioned as **REQUIRED**, it can be considered as OPTIONAL. 
 
-### Pet Create Object
+#### Pet Create Object
 
 
-## Fixed Fields
+##### Fixed Fields
 |  Field Name  |    Type    |   Values   |					Description					|
 | --- | --- | --- | ----- |
 | category | Object | NA | An object that records parametric values |
@@ -67,7 +67,7 @@ In the following description, if a field is not explicitly mentioned as **REQUIR
 | status | String | NA | A string to show the booking/availability status of a pet|
 | petType | String | NA | A string to show the type of a pet, e.g. cat, dog, fish and rabbit|
 
-## Pet Create Object Example
+##### Pet Create Object Example
 
 ```
 	{
@@ -96,8 +96,8 @@ In the following description, if a field is not explicitly mentioned as **REQUIR
 ```
 
 ```
-		category:
-    	name: Sample category name
+	category:
+    		name: Sample category name
     	sub:
 				prop1: Sample sub category of pet
   	
@@ -113,7 +113,7 @@ In the following description, if a field is not explicitly mentioned as **REQUIR
 ```
 
 
-## Status Object
+#### Status Object
 
 A description of the returned result status with the correct error code or successful operation code
 
@@ -122,12 +122,12 @@ A description of the returned result status with the correct error code or succe
 | 200 | New pet created! |
 | 405 | Invalid Input! |
 
-## Security Requirement Object
+#### Security Requirement Object
 
 This specifies the security schemes to execute this operation. Security Requirement Object specifies that bearer authorization needs to be implemented to access or modify records of pets in the database.
 
 
-Security Requirement
+#### Security Requirement
 
 ```
 {
